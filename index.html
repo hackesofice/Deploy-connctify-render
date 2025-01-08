@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deploy to Render </title>
+</head>
+<body>
+    <h1>Deploy to Render </h1>
+    <form id="deployForm">
+        <label for="username">GitHub Username:</label>
+        <input type="text" id="username" name="username" required>
+        <button type="submit">Deploy</button>
+    </form>
+
+    <script>
+        document.getElementById('deployForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const fullUrl = `https://render.com/deploy?repo=https://github.com/${username}/SavingFromFormData.git`
+            window.location.href = fullUrl;
+        });
+    </script>
+</body>
+</html>
+
